@@ -25,7 +25,7 @@ SECRET_KEY = 'bzh!w#e^rj4t1$bh%0&$w*8gv1jj!p#-t9rlp3pm0yoil)acc('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'recipeboxv1',
 ]
 
 MIDDLEWARE = [
@@ -53,8 +54,16 @@ ROOT_URLCONF = 'recipeboxv1.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'BACKEND': 'django.template.backends.jinja2.Jinja2',
         'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'environment': 'recipeboxv1.jinja2.environment'
+        },
+    },
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['/recipeboxv1/jinja2/recipes.html'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
