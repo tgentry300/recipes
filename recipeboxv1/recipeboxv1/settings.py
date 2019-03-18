@@ -54,16 +54,8 @@ ROOT_URLCONF = 'recipeboxv1.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.jinja2.Jinja2',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'environment': 'recipeboxv1.jinja2.environment'
-        },
-    },
-    {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/recipeboxv1/jinja2/recipes.html'],
+        'DIRS': [os.path.join(BASE_DIR, 'recipeboxv1/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
