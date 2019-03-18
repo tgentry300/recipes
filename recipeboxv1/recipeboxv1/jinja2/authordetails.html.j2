@@ -8,5 +8,11 @@
 </head>
 <body>
     <h1>Author Details</h1>
+    <h3>{{ author.name }}</h3>
+    <p>{{ author.bio }}</p>
+    <h3>{{ author.name }}'s Recipes:</h3>
+    {% for recipe in recipes %}
+        <li><a href='../recipedetails/{{ recipe.id }}'>{{ recipe.title }}</a></li>
+        {% endfor %}
 </body>
 </html>

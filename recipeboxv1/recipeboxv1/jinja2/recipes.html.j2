@@ -9,7 +9,7 @@
 <body>
     <h1>These are the recipes</h1>
     {% for recipe in recipes %}
-        <li>{{ recipe }}</li>
+        <li><a href='recipedetails/{{ recipe.id }}'>{{ recipe.title }}</a></li>
     {% endfor %}
 </body>
 </html>
