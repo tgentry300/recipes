@@ -8,8 +8,14 @@
 </head>
 <body>
     <h1>These are the recipes</h1>
+    <p><a href='recipeadd'>Add a Recipe</a></p>
+    <p><a href='authoradd'>Add a new Author</a>(admin only)</p>
     {% for recipe in recipes %}
         <li><a href='recipedetails/{{ recipe.id }}'>{{ recipe.title }}</a></li>
     {% endfor %}
+    <p><a href='signup'>Click Here to Signup</a></p>
+    <p>Already a user? <a href='login'>Login</a></p>
+    <p><a href='logout'>Logout</a></p>
+
 </body>
 </html>
