@@ -5,6 +5,8 @@ from .forms import AuthorAddForm, RecipeAddForm, UserAddForm, LoginForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.admin.views.decorators import staff_member_required
+
 
 
 def all_recipes(request, **kwargs):
@@ -76,6 +78,7 @@ def recipe_add(request):
     return render(request, html, {'form': form})
 
 
+@staff_member_required
 def signup_view(request):
     html = 'generic_form.html.j2'
     form = None

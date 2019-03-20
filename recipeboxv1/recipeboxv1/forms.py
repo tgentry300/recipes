@@ -20,6 +20,10 @@ class UserAddForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput())
 
 
+# class AdminUserAdd(forms.Form):
+    
+
+
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=30)
     password = forms.CharField(widget=forms.PasswordInput())
